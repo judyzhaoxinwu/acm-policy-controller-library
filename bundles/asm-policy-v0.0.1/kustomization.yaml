@@ -14,6 +14,8 @@
 
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+metadata:
+  name: bundles-asm-policy-v0.0.1
 resources:
 - 1.1.1_asm-ingressgateway-label.yaml
 - 1.1.2_asm-sidecar-injection.yaml

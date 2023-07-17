@@ -14,6 +14,8 @@
 
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+metadata:
+  name: bundles-policy-essentials-v2022
 resources:
 - no-secrets-as-env-vars.yaml
 - pods-require-security-context.yaml
