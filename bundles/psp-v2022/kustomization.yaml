@@ -14,6 +14,8 @@
 
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+metadata:
+  name: bundles-policy-psp-v2022
 resources:
 - psp-allow-privilege-escalation-container.yaml
 - psp-apparmor.yaml

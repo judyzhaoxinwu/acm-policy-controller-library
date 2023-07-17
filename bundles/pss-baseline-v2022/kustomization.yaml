@@ -14,6 +14,8 @@
 
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+metadata:
+  name: bundles-pss-baseline-v2022
 resources:
 - apparmor.yaml
 - capabilities.yaml
