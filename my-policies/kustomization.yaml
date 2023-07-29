@@ -11,19 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-piVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 metadata:
   name: anthos-bundles-ap-v1
 resources:
 # - ../bundles/*
 - ../anthos-bundles/pci-dss-v3.2.1
-
 patches: 
 - target: 
-    name: pci-dss-v3.2.1-*
     labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
   patch: |-
     - op: replace 
-      path: "/spec/enforcementAction"
-      value: deny
+      path: /spec/enforcementAction
+      value: warn
