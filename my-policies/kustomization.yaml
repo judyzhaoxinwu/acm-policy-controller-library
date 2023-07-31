@@ -24,4 +24,4 @@ patches:
   patch: |-
     - op: replace 
       path: /spec/enforcementAction
-      value: warn
+      value: deny
