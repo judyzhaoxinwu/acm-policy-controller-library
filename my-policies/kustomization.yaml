@@ -17,7 +17,7 @@ metadata:
   name: anthos-bundles-ap-v1
 resources:
 # - ../bundles/*
-- ../anthos-bundles/pci-dss-v3.2.1
+# - ../anthos-bundles/pci-dss-v3.2.1
 
 patches: 
 - target: 
