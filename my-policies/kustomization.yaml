@@ -22,7 +22,8 @@ resources:
 patches: 
 - target: 
     # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
-    name: pci-dss-v3.2.1-restrict-default-namespace
+    # name: pci-dss-v3.2.1-restrict-default-namespace
+    name: pci-dss-v3.2.1-require-namespace-network-policies
   patch: |-
     - op: replace 
       path: /spec/enforcementAction
