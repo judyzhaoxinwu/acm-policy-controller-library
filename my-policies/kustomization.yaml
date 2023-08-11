@@ -17,7 +17,7 @@ metadata:
   name: anthos-bundles-ap-v1
 resources:
 # - ../bundles/*
-- ../anthos-bundles/pci-dss-v3.2.1
+# - ../anthos-bundles/pci-dss-v3.2.1
 ### I add this comment
 
 patches: 
@@ -28,3 +28,13 @@ patches:
     - op: replace 
       path: /spec/enforcementAction
       value: deny
+# - target: 
+#     # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
+#     name: pci-dss-v3.2.1-restrict-default-namespace
+#   patch: |-
+#     - op: add
+#       path: /spec/match/kinds
+#       value: {
+#         "apiGroups": [""],
+#         "kinds": ["ServiceAccount"]
+#       }

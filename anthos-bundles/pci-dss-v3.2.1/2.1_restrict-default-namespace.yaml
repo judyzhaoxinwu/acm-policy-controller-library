@@ -34,9 +34,6 @@ spec:
       - ""
       kinds:
       - Pod
-      - ServiceAccount
-      - Deployment
-      - Service
   parameters:
     restrictedNamespaces:
     - default
