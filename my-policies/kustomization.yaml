@@ -19,11 +19,11 @@ resources:
 # - ../bundles/*
 - ../anthos-bundles/pci-dss-v3.2.1
 
-# patches: 
-# - target: 
-#     labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
-#     name: pci-dss-v3.2.1-require-namespace-network-policies
-#   patch: |-
-#     - op: replace 
-#       path: /spec/enforcementAction
-#       value: deny
+patches: 
+- target: 
+    # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
+    name: pci-dss-v3.2.1-require-namespace-network-policies
+  patch: |-
+    - op: replace 
+      path: /spec/enforcementAction
+      value: deny
