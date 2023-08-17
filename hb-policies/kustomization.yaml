@@ -27,16 +27,16 @@ resources:
 - ../bundles/psp-v2022
 - ../anthos-bundles/pss-restricted-v2022
 - ../bundles/pss-baseline-v2022
-- ./conventions
+- ./hb-custom-constraints
 
-patches: 
-- target: 
-    # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
-    name: pci-dss-v3.2.1-restrict-default-namespace
-  patch: |-
-    - op: replace 
-      path: /spec/enforcementAction
-      value: deny
+# patches: 
+# - target: 
+#     # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
+#     name: pci-dss-v3.2.1-restrict-default-namespace
+#   patch: |-
+#     - op: replace 
+#       path: /spec/enforcementAction
+#       value: deny
 # - target: 
 #     # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
 #     name: pci-dss-v3.2.1-restrict-default-namespace
