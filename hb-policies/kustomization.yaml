@@ -42,7 +42,7 @@ patches:
 - target: 
     name: pci-dss-v3.2.1-require-namespace-network-policies
   patch: |-
-    - op: replace 
+    - op: replace
       path: /spec/enforcementAction
       value: deny
 - target: 
