@@ -37,8 +37,8 @@ patches:
       path: /spec/enforcementAction
       value: deny
     - op: add
-      path: /metadata/namespace
-      value: constraint-test
+      path: /spec/match/namespaces
+      value: ["constraint-test"]
 - target: 
     name: pci-dss-v3.2.1-require-namespace-network-policies
   patch: |-
@@ -46,8 +46,8 @@ patches:
       path: /spec/enforcementAction
       value: deny
     - op: add
-      path: /metadata/namespace
-      value: constraint-test
+      path: /spec/match/namespaces
+      value: ["constraint-test"]
 - target: 
     name: pci-dss-v3.2.1-restrict-default-namespace
   patch: |-
@@ -61,5 +61,5 @@ patches:
       path: /spec/enforcementAction
       value: deny
     - op: add
-      path: /metadata/namespace
-      value: constraint-test
+      path: /spec/match/namespaces
+      value: ["constraint-test"]
