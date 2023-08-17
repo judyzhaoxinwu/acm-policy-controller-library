@@ -11,6 +11,7 @@ kind: Kustomization
 metadata:
   name: anthos-bundles-pss-restricted-v2022
 resources:
+### Wave 1
 - capabilities.yaml
 - privilege-escalation.yaml
 - running-as-non-root.yaml

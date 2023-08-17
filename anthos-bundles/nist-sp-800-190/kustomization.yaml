@@ -11,27 +11,31 @@ kind: Kustomization
 metadata:
   name: anthos-bundles-nist-sp-800-190
 resources:
-- apparmor.yaml
+### Wave 1
 - asm-peer-authn-strict-mtls.yaml
-- block-creation-with-default-serviceaccount.yaml
-- block-secrets-of-type-basic-auth.yaml
-- capabilities.yaml
-- cpu-and-memory-limits-required.yaml
-- enforce-config-management.yaml
-- host-namespaces.yaml
-- host-network.yaml
-- nodes-have-consistent-time.yaml
-- privileged-containers.yaml
-- proc-mount-type.yaml
-- require-binauthz.yaml
-- require-managed-by-label.yaml
-- require-namespace-network-policies.yaml
-- restrict-clusteradmin-rolebindings.yaml
-- restrict-hostpath-volumes.yaml
-- restrict-rbac-subjects.yaml
 - restrict-repos.yaml
-- restrict-role-wildcards.yaml
-- restrict-volume-types.yaml
-- seccomp.yaml
-- selinux.yaml
+- block-creation-with-default-serviceaccount.yaml
+- apparmor.yaml
+- capabilities.yaml
 - sysctls.yaml
+- restrict-hostpath-volumes.yaml
+- host-network.yaml
+- privileged-containers.yaml
+- host-namespaces.yaml
+- proc-mount-type.yaml
+- restrict-clusteradmin-rolebindings.yaml
+- cpu-and-memory-limits-required.yaml
+- selinux.yaml
+- seccomp.yaml
+- restrict-volume-types.yaml
+- restrict-role-wildcards.yaml
+- require-namespace-network-policies.yaml
+- require-managed-by-label.yaml
+### Wave 2
+- nodes-have-consistent-time.yaml
+- restrict-rbac-subjects.yaml
+
+### Uncomment out to reference all the policies
+# - block-secrets-of-type-basic-auth.yaml
+# - enforce-config-management.yaml
+# - require-binauthz.yaml

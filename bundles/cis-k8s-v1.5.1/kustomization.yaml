@@ -17,6 +17,7 @@ kind: Kustomization
 metadata:
   name: bundles-cis-k8s-v1.5.1
 resources:
+## Wave 1
 - 5.1.1_restrict-clusteradmin-rolebindings.yaml
 - 5.1.3_prohibit-role-wildcard-access.yaml
 - 5.2.1_psp-privileged-container.yaml

@@ -11,7 +11,9 @@ kind: Kustomization
 metadata:
   name: anthos-bundles-pci-dss-v3.2.1-extended
 resources:
-- 1.2_1.3.2_require-valid-network-ranges.yaml
+### Wave 1
 - 1.2_1.3_2.2.2_require-default-deny-network-policies.yaml
+### Wave 2
 - 1.2_1.3_block-all-ingress.yaml
+- 1.2_1.3.2_require-valid-network-ranges.yaml
 - 8.1_8.1.5_restrict-rbac-subjects.yaml
