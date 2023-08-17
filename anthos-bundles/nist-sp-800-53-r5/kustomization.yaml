@@ -11,7 +11,6 @@ kind: Kustomization
 metadata:
   name: anthos-bundles-nist-sp-800-53-r5
 resources:
-##Wave 1
 - asm-peer-authn-strict-mtls.yaml
 - restrict-repos.yaml
 - block-creation-with-default-serviceaccount.yaml
@@ -31,12 +30,11 @@ resources:
 - cpu-and-memory-limits-required.yaml
 - require-managed-by-label.yaml
 - require-namespace-network-policies.yaml
-### Wave 2
 - nodes-have-consistent-time.yaml
 - restrict-rbac-subjects.yaml
-### Uncomment to reference all the policies
-# - block-secrets-of-type-basic-auth.yaml
-# - enforce-config-management.yaml
-# - require-av-daemonset.yaml
-# - require-binauthz.yaml
-# - restrict-storageclass.yaml
+### below are in lower priority 
+- block-secrets-of-type-basic-auth.yaml
+- enforce-config-management.yaml
+- require-av-daemonset.yaml
+- require-binauthz.yaml
+- restrict-storageclass.yaml

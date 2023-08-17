@@ -17,7 +17,6 @@ kind: Kustomization
 metadata:
   name: bundles-pss-baseline-v2022
 resources:
-## Wave 1
 - apparmor.yaml
 - capabilities.yaml
 - host-namespaces-host-pid-ipc.yaml

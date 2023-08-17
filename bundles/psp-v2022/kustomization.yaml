@@ -17,7 +17,6 @@ kind: Kustomization
 metadata:
   name: bundles-policy-psp-v2022
 resources:
-### Wave 1
 - psp-allow-privilege-escalation-container.yaml
 - psp-apparmor.yaml
 - psp-capabilities.yaml

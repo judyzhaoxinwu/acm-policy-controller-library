@@ -17,7 +17,6 @@ kind: Kustomization
 metadata:
   name: bundles-policy-essentials-v2022
 resources:
-### Wave 1
 - no-secrets-as-env-vars.yaml
 - pods-require-security-context.yaml
 - prohibit-role-wildcard-access.yaml
