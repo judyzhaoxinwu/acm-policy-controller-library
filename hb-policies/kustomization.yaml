@@ -16,7 +16,6 @@ kind: Kustomization
 metadata:
   name: anthos-bundles-ap-v1
 resources:
-### Please check into each bundle's kustomization.yaml to see which constraint is not included
 - ../bundles/asm-policy-v0.0.1
 - ../anthos-bundles/pci-dss-v3.2.1
 - ../anthos-bundles/pci-dss-v3.2.1-extended
@@ -29,21 +28,38 @@ resources:
 - ../bundles/pss-baseline-v2022
 - ./hb-custom-constraints
 
-# patches: 
-# - target: 
-#     # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
-#     name: pci-dss-v3.2.1-restrict-default-namespace
-#   patch: |-
-#     - op: replace 
-#       path: /spec/enforcementAction
-#       value: deny
-# - target: 
-#     # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
-#     name: pci-dss-v3.2.1-restrict-default-namespace
-#   patch: |-
-#     - op: add
-#       path: /spec/match/kinds
-#       value: {
-#         "apiGroups": [""],
-#         "kinds": ["ServiceAccount"]
-#       }
+patches: 
+- target: 
+    # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
+    name: asm-policy-v0.0.1-asm-sidecar-injection
+  patch: |-
+    - op: replace 
+      path: /spec/enforcementAction
+      value: deny
+    - op: add
+      path: /metadata/namespace
+      value: constraint-test
+- target: 
+    name: pci-dss-v3.2.1-require-namespace-network-policies
+  patch: |-
+    - op: replace 
+      path: /spec/enforcementAction
+      value: deny
+    - op: add
+      path: /metadata/namespace
+      value: constraint-test
+- target: 
+    name: pci-dss-v3.2.1-restrict-default-namespace
+  patch: |-
+    - op: replace 
+      path: /spec/enforcementAction
+      value: deny
+- target: 
+    name: container-must-have-limits
+  patch: |-
+    - op: replace 
+      path: /spec/enforcementAction
+      value: deny
+    - op: add
+      path: /metadata/namespace
+      value: constraint-test
