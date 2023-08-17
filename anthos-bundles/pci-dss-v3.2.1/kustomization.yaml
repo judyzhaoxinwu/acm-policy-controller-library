@@ -16,7 +16,7 @@ resources:
 - 2.1_restrict-default-namespace.yaml
 - 1.2.2_8.1.2_enforce-managed-by-configmanagement-label.yaml
 - 1.1.4_resources-have-required-labels.yaml
-# - 1.2_require-namespace-network-policies.yaml
+- 1.2_require-namespace-network-policies.yaml
 - 6.5_6.6_enforce-cloudarmor-backendconfig.yaml
 - 10.4.1-10.4.3_nodes-have-consistent-time.yaml
 ### below are in lower priority 
