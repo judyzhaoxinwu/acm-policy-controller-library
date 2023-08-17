@@ -45,9 +45,6 @@ patches:
     - op: replace 
       path: /spec/enforcementAction
       value: deny
-    - op: add
-      path: /spec/match/namespaces
-      value: ["constraint-test"]
 - target: 
     name: pci-dss-v3.2.1-restrict-default-namespace
   patch: |-
