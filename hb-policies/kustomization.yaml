@@ -60,3 +60,12 @@ patches:
     - op: add
       path: /spec/match/namespaces
       value: ["constraint-test"]
+- target: 
+    name: unique-ingress-host
+  patch: |-
+    - op: replace 
+      path: /spec/enforcementAction
+      value: deny
+
+
+      

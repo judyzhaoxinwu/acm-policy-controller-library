@@ -33,7 +33,7 @@ resources:
 # - block-wildcard-ingress.yaml
 # - empty-dir-has-size-limit.yaml ###can change the maxSizelimit
 # - sourcenotall-authz-constraint.yaml
-# - unique-ingress-host.yaml
+- unique-ingress-host.yaml
 
 # patches: 
 # - target: 
