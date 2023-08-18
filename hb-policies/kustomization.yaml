@@ -60,4 +60,10 @@ patches:
     - op: replace 
       path: /spec/enforcementAction
       value: deny  
+- target: 
+    name: cis-k8s-v1.5.1-require-namespace-network-policies
+  patch: |-
+    - op: replace 
+      path: /spec/enforcementAction
+      value: deny  
       
