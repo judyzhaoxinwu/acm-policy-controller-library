@@ -67,7 +67,7 @@ patches:
       path: /spec/enforcementAction
       value: deny  
 - target: 
-    name: require-namespace-network-policies-example
+    name: require-namespace-network-policy-example
   patch: |-
     - op: replace 
       path: /spec/enforcementAction
