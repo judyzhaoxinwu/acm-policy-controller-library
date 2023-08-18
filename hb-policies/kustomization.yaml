@@ -65,9 +65,6 @@ patches:
   patch: |-
     - op: replace 
       path: /spec/enforcementAction
-      value: deny
-   - op: add
-      path: /spec/match/namespaces
-      value: ["constraint-test"]     
+      value: deny  
 
       
