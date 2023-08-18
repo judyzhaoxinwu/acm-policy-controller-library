@@ -39,12 +39,6 @@ patches:
     - op: add
       path: /spec/match/namespaces
       value: ["constraint-test"]
-# - target: 
-#     name: nist-sp-800-53-r5-require-namespace-network-policies #pci-dss-v3.2.1-require-namespace-network-policies
-#   patch: |-
-#     - op: replace
-#       path: /spec/enforcementAction
-#       value: deny
 - target: 
     name: pci-dss-v3.2.1-restrict-default-namespace
   patch: |-
@@ -66,11 +60,4 @@ patches:
     - op: replace 
       path: /spec/enforcementAction
       value: deny  
-- target: 
-    name: require-namespace-network-policy-example
-  patch: |-
-    - op: replace 
-      path: /spec/enforcementAction
-      value: deny 
-
       
