@@ -18,7 +18,7 @@ resources:
 # - dr-tls-enabled.yaml
 # - block-endpoint-edit-default-role.yaml
 # - block-process-namespace-sharing.yaml
-# - container-must-have-limits.yaml ##can change in patches
+- container-must-have-limits.yaml ##can change in patches
 # - no-anonymous.yaml ##can change in patches
 # - external-ips.yaml ##can change in patches
 # - ingress-https-only.yaml
