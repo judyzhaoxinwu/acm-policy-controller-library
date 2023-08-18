@@ -24,5 +24,5 @@ spec:
       kinds:
       - Pod
   parameters:
-    cpu: 200m   ##needs to change
-    memory: 1Gi   ##needs to change
+    cpu: 500m   ##needs to change
+    memory: 2Gi   ##needs to change
