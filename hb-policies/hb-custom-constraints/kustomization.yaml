@@ -34,7 +34,7 @@ resources:
 # - empty-dir-has-size-limit.yaml ###can change the maxSizelimit
 # - sourcenotall-authz-constraint.yaml
 - unique-ingress-host.yaml
-- require-namespace-network-policies-example.yaml
+- require-namespace-network-policy-example.yaml
 
 # patches: 
 # - target: 
