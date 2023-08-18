@@ -11,30 +11,30 @@ kind: Kustomization
 metadata:
   name: anthos-bundles-nist-sp-800-53-r5
 resources:
-- asm-peer-authn-strict-mtls.yaml
-- restrict-repos.yaml
-- block-creation-with-default-serviceaccount.yaml
-- apparmor.yaml
-- capabilities.yaml
-- sysctls.yaml
-- restrict-hostpath-volumes.yaml
-- host-network.yaml
-- host-namespaces.yaml
-- privileged-containers.yaml
-- proc-mount-type.yaml
-- restrict-clusteradmin-rolebindings.yaml
-- selinux.yaml
-- seccomp.yaml
-- restrict-volume-types.yaml
-- restrict-role-wildcards.yaml
-- cpu-and-memory-limits-required.yaml
-- require-managed-by-label.yaml
+# - asm-peer-authn-strict-mtls.yaml
+# - restrict-repos.yaml
+# - block-creation-with-default-serviceaccount.yaml
+# - apparmor.yaml
+# - capabilities.yaml
+# - sysctls.yaml
+# - restrict-hostpath-volumes.yaml
+# - host-network.yaml
+# - host-namespaces.yaml
+# - privileged-containers.yaml
+# - proc-mount-type.yaml
+# - restrict-clusteradmin-rolebindings.yaml
+# - selinux.yaml
+# - seccomp.yaml
+# - restrict-volume-types.yaml
+# - restrict-role-wildcards.yaml
+# - cpu-and-memory-limits-required.yaml
+# - require-managed-by-label.yaml
 - require-namespace-network-policies.yaml
-- nodes-have-consistent-time.yaml
-- restrict-rbac-subjects.yaml
+# - nodes-have-consistent-time.yaml
+# - restrict-rbac-subjects.yaml
 ### below are in lower priority 
-- block-secrets-of-type-basic-auth.yaml
-- enforce-config-management.yaml
-- require-av-daemonset.yaml
-- require-binauthz.yaml
-- restrict-storageclass.yaml
+# - block-secrets-of-type-basic-auth.yaml
+# - enforce-config-management.yaml
+# - require-av-daemonset.yaml
+# - require-binauthz.yaml
+# - restrict-storageclass.yaml
