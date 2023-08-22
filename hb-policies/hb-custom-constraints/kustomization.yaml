@@ -33,7 +33,7 @@ resources:
 # - block-wildcard-ingress.yaml
 # - empty-dir-has-size-limit.yaml ###can change the maxSizelimit
 # - sourcenotall-authz-constraint.yaml
-- ./resource-provision
+# - ./resource-provision
 # - require-namespace-network-policy-example.yaml
 
 # patches: 
