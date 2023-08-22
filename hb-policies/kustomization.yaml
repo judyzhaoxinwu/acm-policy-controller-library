@@ -46,17 +46,14 @@ patches:
       path: /spec/enforcementAction
       value: deny
 - target: 
-    name: unique-ingress-host
-  patch: |-
-    - op: replace 
-      path: /spec/enforcementAction
-      value: deny
-- target: 
     name: pci-dss-v3.2.1-require-namespace-network-policies
   patch: |-
     - op: replace 
       path: /spec/enforcementAction
       value: deny
+    - op: add
+      path: /spec/match/namespaces
+      value: ["constraint-test"]
 - target: 
     name: container-must-have-limits
   patch: |-
