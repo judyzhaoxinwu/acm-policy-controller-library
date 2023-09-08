@@ -17,49 +17,22 @@ metadata:
   name: anthos-bundles-ap-v1
 resources:
 - ../bundles/asm-policy-v0.0.1
-- ../anthos-bundles/pci-dss-v3.2.1
-- ../anthos-bundles/pci-dss-v3.2.1-extended
-- ../anthos-bundles/nist-sp-800-190 
-- ../anthos-bundles/nist-sp-800-53-r5
-- ../bundles/cis-k8s-v1.5.1
-- ../bundles/policy-essentials-v2022
-- ../bundles/psp-v2022
-- ../anthos-bundles/pss-restricted-v2022
-- ../bundles/pss-baseline-v2022
-- ./hb-custom-constraints
+# - ../anthos-bundles/pci-dss-v3.2.1
+# - ../anthos-bundles/pci-dss-v3.2.1-extended
+# - ../anthos-bundles/nist-sp-800-190 
+# - ../anthos-bundles/nist-sp-800-53-r5
+# - ../bundles/cis-k8s-v1.5.1
+# - ../bundles/policy-essentials-v2022
+# - ../bundles/psp-v2022
+# - ../anthos-bundles/pss-restricted-v2022
+# - ../bundles/pss-baseline-v2022
+# - ./hb-custom-constraints
 
 patches: 
 - target: 
-    # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
-    name: asm-policy-v0.0.1-asm-sidecar-injection
+    labelSelector: policycontroller.gke.io/bundleName=asm-policy-v0.0.1
+    # name: asm-policy-v0.0.1-asm-sidecar-injection
   patch: |-
     - op: replace 
       path: /spec/enforcementAction
       value: deny
-    - op: add
-      path: /spec/match/namespaces
-      value: ["constraint-test"]
-- target: 
-    name: pci-dss-v3.2.1-restrict-default-namespace
-  patch: |-
-    - op: replace 
-      path: /spec/enforcementAction
-      value: deny
-- target: 
-    name: pci-dss-v3.2.1-require-namespace-network-policies
-  patch: |-
-    - op: replace 
-      path: /spec/enforcementAction
-      value: deny
-    - op: add
-      path: /spec/match/namespaces
-      value: ["constraint-test"]
-- target: 
-    name: container-must-have-limits
-  patch: |-
-    - op: replace 
-      path: /spec/enforcementAction
-      value: deny
-    - op: add
-      path: /spec/match/namespaces
-      value: ["constraint-test"]

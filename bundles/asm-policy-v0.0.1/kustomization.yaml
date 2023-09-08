@@ -17,12 +17,12 @@ kind: Kustomization
 metadata:
   name: bundles-asm-policy-v0.0.1
 resources:
-- 1.3.1_asm-peer-authn-mesh-strict-mtls.yaml
-- 1.3.2_asm-peer-authn-strict-mtls.yaml
-- 1.1.2_asm-sidecar-injection.yaml
-- 1.2.1_asm-authz-policy-mesh-default-deny.yaml
-- 1.1.1_asm-ingressgateway-label.yaml
-## below are in lower priority 
-- 1.2.2_asm-authz-policy-normalization.yaml
-- 1.2.3_asm-authz-policy-safe-pattern.yaml
-- 1.4.1_asm-request-authn-prohibited-output-headers.yaml
+- 1.3.1_asm-peer-authn-mesh-strict-mtls.yaml ##deny
+- 1.3.2_asm-peer-authn-strict-mtls.yaml ##deny
+- 1.1.2_asm-sidecar-injection.yaml ##deny
+- 1.2.1_asm-authz-policy-mesh-default-deny.yaml ##deny
+- 1.1.1_asm-ingressgateway-label.yaml ##dryrun
+## below are in lower priority for referencing
+# - 1.2.2_asm-authz-policy-normalization.yaml
+# - 1.2.3_asm-authz-policy-safe-pattern.yaml
+# - 1.4.1_asm-request-authn-prohibited-output-headers.yaml
