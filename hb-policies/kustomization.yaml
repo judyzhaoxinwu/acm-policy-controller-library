@@ -16,7 +16,7 @@ kind: Kustomization
 metadata:
   name: anthos-bundles-ap-v1
 resources:
-- ../bundles/asm-policy-v0.0.1
+# - ../bundles/asm-policy-v0.0.1
 # - ../anthos-bundles/pci-dss-v3.2.1
 # - ../anthos-bundles/pci-dss-v3.2.1-extended
 # - ../anthos-bundles/nist-sp-800-190 
@@ -26,13 +26,13 @@ resources:
 # - ../bundles/psp-v2022
 # - ../anthos-bundles/pss-restricted-v2022
 # - ../bundles/pss-baseline-v2022
-# - ./hb-custom-constraints
+- ./hb-custom-constraints
 
-patches: 
-- target: 
-    labelSelector: policycontroller.gke.io/bundleName=asm-policy-v0.0.1
-    # name: asm-policy-v0.0.1-asm-sidecar-injection
-  patch: |-
-    - op: replace 
-      path: /spec/enforcementAction
-      value: deny
+# patches: 
+# - target: 
+#     labelSelector: policycontroller.gke.io/bundleName=asm-policy-v0.0.1
+#     # name: asm-policy-v0.0.1-asm-sidecar-injection
+#   patch: |-
+#     - op: replace 
+#       path: /spec/enforcementAction
+#       value: deny
