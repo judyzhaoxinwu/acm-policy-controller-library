@@ -26,6 +26,22 @@ spec:
       - ""
       kinds:
       - Pod
+    - apiGroups:
+      - ""
+      kinds:
+      - ReplicationController
+    - apiGroups:
+      - apps
+      kinds:
+      - ReplicaSet
+      - Deployment
+      - StatefulSet
+      - DaemonSet
+    - apiGroups:
+      - batch
+      kinds:
+      - CronJob
+      - Job
   parameters:
     cpu: 500m   ##needs to change
     memory: 2Gi   ##needs to change
