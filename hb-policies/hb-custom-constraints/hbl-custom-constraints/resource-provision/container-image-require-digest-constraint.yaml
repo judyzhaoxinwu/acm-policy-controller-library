@@ -23,5 +23,21 @@ spec:
       - ""
       kinds:
       - Pod
+    - apiGroups:
+      - ""
+      kinds:
+      - ReplicationController
+    - apiGroups:
+      - apps
+      kinds:
+      - ReplicaSet
+      - Deployment
+      - StatefulSet
+      - DaemonSet
+    - apiGroups:
+      - batch
+      kinds:
+      - CronJob
+      - Job
     namespaces:
     - default
