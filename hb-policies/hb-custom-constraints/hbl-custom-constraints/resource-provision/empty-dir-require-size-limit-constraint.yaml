@@ -22,6 +22,8 @@ spec:
     - istio-system
     - kube-system
     - gatekeeper-system
+    - gke-gmp-system
+    - config-management-system
   parameters:
     exemptVolumesRegex:
     - ^istio-[a-z]+$
