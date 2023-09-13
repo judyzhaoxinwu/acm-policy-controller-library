@@ -18,6 +18,11 @@ metadata:
 spec:
   enforcementAction: dryrun
   match:
+    excludedNamespaces:
+    - istio-system
+    - kube-system
+    - config-management-system
+    - gke-gmp-system
     kinds:
     - apiGroups:
       - ""
