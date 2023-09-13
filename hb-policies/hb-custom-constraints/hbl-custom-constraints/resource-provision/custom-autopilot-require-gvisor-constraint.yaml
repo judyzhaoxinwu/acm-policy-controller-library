@@ -45,6 +45,7 @@ spec:
       - kube-public
       - kube-system 
       - resource-group-system
+      - gke-gmp-system
   parameters:
     validName: "gvisor"
     
