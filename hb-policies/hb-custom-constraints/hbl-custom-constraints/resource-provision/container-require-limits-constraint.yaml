@@ -18,6 +18,9 @@ metadata:
 spec:
   enforcementAction: dryrun
   match:
+    excludedNamespaces:
+    - kube-system
+    - gke-gmp-system
     kinds:
     - apiGroups:
       - ""

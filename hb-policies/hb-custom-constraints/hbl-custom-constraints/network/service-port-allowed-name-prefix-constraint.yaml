@@ -23,7 +23,7 @@ spec:
     - config-management-monitoring
     - gke-gmp-system
     - gatekeeper-system
-    - default 
+    - default
     kinds:
     - apiGroups:
       - ""
