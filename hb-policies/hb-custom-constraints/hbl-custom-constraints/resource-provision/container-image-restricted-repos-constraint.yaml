@@ -28,3 +28,6 @@ spec:
       - gke.gcr.io/
       - gcr.io/
       - us.gcr.io/
+      - us-docker.pkg.dev/
+      - docker.io/
+      - autopilot.gke.io/
