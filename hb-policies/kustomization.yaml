@@ -14,4 +14,26 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ./hb-custom-constraints
+# - ./hb-custom-constraints
+- ../bundles/cis-k8s-v1.5.1
+
+patches: 
+- target: 
+    # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
+    name: cis-k8s-v1.5.1-require-namespace-network-policies
+  patch: |-
+    - op: replace
+      path: /spec/enforcementAction
+      value: deny
+    - op: add
+      path: /spec/match/namespaceSelector
+      value: 
+        matchExpressions: []
+    - op: add
+      path: /spec/match/namespaceSelector/matchExpressions/-
+      value: {
+        key: istio.io/rev,
+        operator: Exists,
+        values: []
+      }
+      
