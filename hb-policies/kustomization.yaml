@@ -33,7 +33,7 @@ patches:
       path: /spec/match/namespaceSelector/matchExpressions/-
       value: {
         key: istio.io/rev,
-        operator: Exists,
+        operator: DoesNotExist,
         values: []
       }
       
