@@ -12,7 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: AsmAuthzPolicyDefaultDeny
+# kind: AsmAuthzPolicyDefaultDeny
+kind: asmauthzpolicydefaultdenyhbl1
 metadata:
   name: asm-policy-v0.0.1-asm-authz-policy-mesh-default-deny
   labels:
