@@ -16,6 +16,7 @@ kind: Kustomization
 resources:
 # - ./hb-custom-constraints
 - ../bundles/cis-k8s-v1.5.1
+- ../bundles/asm-policy-v0.0.1
 
 patches: 
 - target: 
@@ -36,4 +37,10 @@ patches:
         operator: DoesNotExist,
         values: []
       }
+- target: 
+    name: asm-policy-v0.0.1-asm-authz-policy-mesh-default-deny
+  patch: |-
+    - op: replace
+      path: /spec/enforcementAction
+      value: deny
       
