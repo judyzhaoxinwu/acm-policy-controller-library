@@ -18,14 +18,10 @@ metadata:
     metadata.gatekeeper.sh/title: ASM AuthorizationPolicy Default Deny
     metadata.gatekeeper.sh/version: 1.0.1
     policycontroller.configmanagement.gke.io/version: 1.15.2
-  creationTimestamp: "2023-10-03T13:39:25Z"
-  generation: 1
   labels:
     app.kubernetes.io/managed-by: anthospolicycontroller.googleapis.com
     policycontroller.configmanagement.gke.io/referential: "true"
   name: asmauthzpolicydefaultdenyhbl1
-  resourceVersion: "7406972"
-  uid: 8d26d222-4bf0-40df-82b7-a4525a2e3589
 spec:
   crd:
     spec:
