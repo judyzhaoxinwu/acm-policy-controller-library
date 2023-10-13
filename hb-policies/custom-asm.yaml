@@ -1,0 +1,89 @@
+apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata:
+  annotations:
+    addons.k8s.io/ignore: "true"
+    description: Enforce the mesh level default deny AuthorizationPolicy. Reference
+      to https://istio.io/latest/docs/ops/best-practices/security/#use-default-deny-patterns.
+    metadata.gatekeeper.sh/requires-sync-data: |
+      "[
+        [
+          {
+            "groups": ["security.istio.io"],
+            "versions": ["v1beta1"],
+            "kinds": ["AuthorizationPolicy"]
+          }
+        ]
+      ]"
+    metadata.gatekeeper.sh/title: ASM AuthorizationPolicy Default Deny
+    metadata.gatekeeper.sh/version: 1.0.1
+    policycontroller.configmanagement.gke.io/version: 1.15.2
+  creationTimestamp: "2023-10-03T13:39:25Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/managed-by: anthospolicycontroller.googleapis.com
+    policycontroller.configmanagement.gke.io/referential: "true"
+  name: asmauthzpolicydefaultdenyhbl1
+  resourceVersion: "7406972"
+  uid: 8d26d222-4bf0-40df-82b7-a4525a2e3589
+spec:
+  crd:
+    spec:
+      names:
+        kind: AsmAuthzPolicyDefaultDenyHbl1
+      validation:
+        legacySchema: true
+        openAPIV3Schema:
+          properties:
+            rootNamespace:
+              description: Anthos Service Mesh root namespace, default value is "istio-system"
+                if not specified.
+              type: string
+            strictnessLevel:
+              description: Level of AuthorizationPolicy strictness.
+              enum:
+              - Low
+              - High
+              type: string
+  targets:
+  - rego: |
+      package asm.security.authorizationpolicy
+
+      ################
+      # Mesh Level Default Deny
+      ################
+
+      # In the ASM root namespace, there should be a default deny AuthorizationPolicy.
+
+      violation[{"msg": msg}] {
+        has_strictness_set_to_high
+        # is_asm_authz_policy_default_deny(input.review.kind)
+        # use input root namespace or default value istio-system
+        root_ns := object.get(object.get(input, "parameters", {}), "rootNamespace", "istio-system")
+        not namespace_has_default_deny_policy(root_ns)
+        msg := sprintf("Root namespace <%v> does not have a default deny AuthorizationPolicy", [root_ns])
+      }
+
+      has_strictness_set_to_high {
+        input.parameters.strictnessLevel == "High"
+      }
+
+      # is_asm_authz_policy_default_deny(kind) {
+      #   kind.kind == "AsmAuthzPolicyDefaultDeny"
+      #   kind.group == "constraints.gatekeeper.sh"
+      # }
+
+      namespace_has_default_deny_policy(ns) {
+        ap := data.inventory.namespace[ns][_].AuthorizationPolicy[_]
+        is_allow_action(ap)
+        not ap.spec.rules
+      }
+
+      is_allow_action(ap) {
+        ap.spec.action == "ALLOW"
+      }
+
+      is_allow_action(ap) {
+        not ap.spec.action
+      }
+    target: admission.k8s.gatekeeper.sh

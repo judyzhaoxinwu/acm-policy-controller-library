@@ -17,6 +17,7 @@ resources:
 # - ./hb-custom-constraints
 - ../bundles/cis-k8s-v1.5.1
 - ../bundles/asm-policy-v0.0.1
+- custom-asm.yaml
 
 patches: 
 - target: 
@@ -43,4 +44,3 @@ patches:
     - op: replace
       path: /spec/enforcementAction
       value: deny
-      
