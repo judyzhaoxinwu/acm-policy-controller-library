@@ -19,28 +19,28 @@ resources:
 - ../bundles/asm-policy-v0.0.1
 - custom-asm.yaml
 
-patches: 
-- target: 
-    # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
-    name: cis-k8s-v1.5.1-require-namespace-network-policies
-  patch: |-
-    - op: replace
-      path: /spec/enforcementAction
-      value: deny
-    - op: add
-      path: /spec/match/namespaceSelector
-      value: 
-        matchExpressions: []
-    - op: add
-      path: /spec/match/namespaceSelector/matchExpressions/-
-      value: {
-        key: istio.io/rev,
-        operator: DoesNotExist,
-        values: []
-      }
-- target: 
-    name: asm-policy-v0.0.1-asm-authz-policy-mesh-default-deny
-  patch: |-
-    - op: replace
-      path: /spec/enforcementAction
-      value: deny
+# patches: 
+# - target: 
+#     # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
+#     name: cis-k8s-v1.5.1-require-namespace-network-policies
+#   patch: |-
+#     - op: replace
+#       path: /spec/enforcementAction
+#       value: deny
+#     - op: add
+#       path: /spec/match/namespaceSelector
+#       value: 
+#         matchExpressions: []
+#     - op: add
+#       path: /spec/match/namespaceSelector/matchExpressions/-
+#       value: {
+#         key: istio.io/rev,
+#         operator: DoesNotExist,
+#         values: []
+#       }
+# - target: 
+#     name: asm-policy-v0.0.1-asm-authz-policy-mesh-default-deny
+#   patch: |-
+#     - op: replace
+#       path: /spec/enforcementAction
+#       value: deny
