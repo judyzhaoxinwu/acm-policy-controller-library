@@ -17,9 +17,9 @@ resources:
 # - ./hb-custom-constraints
 - ../bundles/cis-k8s-v1.5.1
 - ../bundles/asm-policy-v0.0.1
-- custom-asm.yaml
+# - custom-asm.yaml
 
-# patches: 
+patches: 
 # - target: 
 #     # labelSelector: policycontroller.gke.io/bundleName=pci-dss-v3.2.1
 #     name: cis-k8s-v1.5.1-require-namespace-network-policies
@@ -38,9 +38,22 @@ resources:
 #         operator: DoesNotExist,
 #         values: []
 #       }
-# - target: 
-#     name: asm-policy-v0.0.1-asm-authz-policy-mesh-default-deny
-#   patch: |-
-#     - op: replace
-#       path: /spec/enforcementAction
-#       value: deny
+- target: 
+    name: asm-policy-v0.0.1-asm-authz-policy-mesh-default-deny
+  patch: |-
+    - op: replace
+      path: /spec/enforcementAction
+      value: deny
+- target: 
+    name: asm-policy-v0.0.1-asm-peer-authn-mesh-strict-mtls
+  patch: |-
+    - op: replace
+      path: /spec/enforcementAction
+      value: deny
+- target: 
+    name: cis-k8s-v1.5.1-require-namespace-network-policies
+  patch: |-
+    - op: replace
+      path: /spec/enforcementAction
+      value: deny
+    
